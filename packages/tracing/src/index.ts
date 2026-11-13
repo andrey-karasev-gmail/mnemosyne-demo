@@ -35,15 +35,15 @@ export interface OptimizationTrace {
 const OPTIMIZER_ENTRY = path.resolve(__dirname, "../examples/optimize-trace.ts");
 
 /** Run the real domain optimizer through Mnemosyne's Babel instrumentation. */
-export function traceOptimization(input: {
+export async function traceOptimization(input: {
   containers: number;
   avgCpu: number;
   avgMemory: number;
   region: string;
   reserved: boolean;
   highAvailability: boolean;
-}): OptimizationTrace {
-  const trace = runTraceOnce(
+}): Promise<OptimizationTrace> {
+  const trace = await runTraceOnce(
     { MNEMOSYNE_OPTIMIZE_INPUT: JSON.stringify(input) },
     OPTIMIZER_ENTRY,
   );
