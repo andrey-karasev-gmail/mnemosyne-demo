@@ -38,7 +38,7 @@ app.post("/api/optimize", async (request, response) => {
   }
 
   try {
-    const trace = traceOptimization(parsed.data);
+    const trace = await traceOptimization(parsed.data);
     const result = trace.output as {
       sku: string;
       nodes: number;
