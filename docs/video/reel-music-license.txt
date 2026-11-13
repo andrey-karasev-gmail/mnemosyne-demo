@@ -1,0 +1,1 @@
+Custom synthesized instrumental score composed for the Mnemosyne demo reel. The track is generated from oscillators and deterministic noise in build-reel.mjs; no third-party recording, sample, or music-library track is used. There are no attribution requirements for the generated track.

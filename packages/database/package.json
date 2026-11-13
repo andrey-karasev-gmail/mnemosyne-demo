@@ -1,0 +1,20 @@
+{
+  "name": "@demo/database",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "db:generate": "prisma generate --config prisma/prisma7.config.ts",
+    "db:migrate": "prisma migrate dev --config prisma/prisma7.config.ts"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.7",
+    "prisma": "^7.10.1"
+  },
+  "dependencies": {
+    "@prisma/adapter-better-sqlite3": "^7.10.1",
+    "@prisma/client": "^7.10.1",
+    "better-sqlite3": "^12.5.0"
+  }
+}

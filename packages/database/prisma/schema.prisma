@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/client"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model OptimizationRun {
+  id              String   @id @default(cuid())
+
+  createdAt       DateTime @default(now())
+
+  region          String
+
+  containers      Int
+
+  avgCpu          Float
+
+  avgMemory       Float
+
+  sku             String
+
+  nodes           Int
+
+  reserved        Boolean  @default(false)
+
+  highAvailability Boolean @default(false)
+
+  monthlyCost     Float
+
+  optimizedCost   Float
+
+  savingsPercent  Float
+
+  traceJson       String
+
+  traces CostTrace[]
+}
+
+model CostTrace {
+  id String @id @default(cuid())
+
+  runId String
+
+  stepName String
+
+  inputJson String
+
+  outputJson String
+
+  durationMs Int
+
+  run OptimizationRun @relation(fields: [runId], references: [id])
+}

@@ -1,0 +1,21 @@
+{
+  "name": "graphql",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc --noEmit -p tsconfig.json",
+    "start": "tsx src/server.ts"
+  },
+  "dependencies": {
+    "@apollo/server": "^5.5.1",
+    "@demo/domain": "*",
+    "graphql": "^16.15.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}
